@@ -1,0 +1,51 @@
+[
+    {
+        "id" : 1,
+        "nombre": "Amazon Echo Dot",
+        "marca":"Amazon",
+        "precio": 65,
+        "imagen":"./img/amazon-echo-dot-5.png"
+    },
+    {
+        "id" : 2,
+        "nombre": "Amazon Firestick 4K MAX",
+        "marca":"Amazon",
+        "precio": 45,
+        "imagen":"./img/amazon-firestick-max.png"
+    },
+    {
+        "id" : 3,
+        "nombre": "Laptop Asus Gaming",
+        "marca":"Asus",
+        "precio": 1045,
+        "imagen":"./img/asus-gaming-laptop.png"
+    },
+    {
+        "id" : 4,
+        "nombre": "Barra de Sonido HP",
+        "marca":"HP",
+        "precio": 120,
+        "imagen":"./img/barra-de-sonido-hp.png"
+    },
+    {
+        "id" : 5,
+        "nombre": "Iphone 14 Pro Max",
+        "marca":"Apple",
+        "precio": 1100,
+        "imagen":"./img/iphone-14-pro-max.png"
+    },
+    {
+        "id" : 6,
+        "nombre": "Lenovo Yoga 3",
+        "marca":"Lenovo",
+        "precio": 1400,
+        "imagen":"./img/lenovo-yoga-3.png"
+    },
+    {
+        "id" : 7,
+        "nombre": "Samsung S23 Ultra",
+        "marca":"Samsung",
+        "precio": 1050,
+        "imagen":"./img/samsung-s23-ultra.png"
+    }
+]

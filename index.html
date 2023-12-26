@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final - Erick Polanco</title>
+    <!-- Bootstrap 5.3.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Toastify 1.12.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+</head>
+<body>
+    
+    <section class="container my-5">
+        <h1 class="mb-2">Bienvenidos a TechStore C.A</h1>
+        <section class="row tienda">
+            
+        </section>
+
+        <section class="row carrito my-5">
+            <h2 class="mb-3 col-10">Carrito de compras: </h2>
+            <button class="btn-primary col-2 reset">Eliminar Carrito</button>
+            <table class="table col-12 my-5">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4"><h5 class="text-center">No hay productos en el carrito</h5></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3"><h2>Total Carrito:</h2></th>
+                        <th><h2 class="total">0 USD</h2></th>
+                    </tr>
+                </tfoot>
+                
+            </table>
+            <section>
+                <button class="btn btn-primary" id="btnComprar" disabled>Comprar</button>
+            </section>
+        </section>
+        
+    </section>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- toastify -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
+    <!-- SweatAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- JS Propios -->
+    <script src="./app.js"></script>
+</body>
+</html>
