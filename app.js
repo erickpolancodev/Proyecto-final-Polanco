@@ -138,7 +138,8 @@ function contadorCarrito(){
 }
 
 async function weather(){
-    const appID = 'c8b73b0c82529f1afc73e3a0b747fde6';
+    //const appID = 'c8b73b0c82529f1afc73e3a0b747fde6';
+    const appID ='';
     const city = "Buenos Aires, Argentina";
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appID}`;
 
