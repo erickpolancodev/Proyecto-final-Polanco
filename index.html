@@ -8,8 +8,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Toastify 1.12.0 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+    <link rel="stylesheet" href="./libs/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg  ms-auto px-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">TechStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse py-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <p class="weather"></p>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#carrito"> <i class="mx-3 fa-solid fa-2x fa-cart-shopping"><span class="badge rounded-pill bg-primary">0</span></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     
     <section class="container my-5">
         <h1 class="mb-2">Bienvenidos a TechStore C.A</h1>
@@ -17,7 +42,7 @@
             
         </section>
 
-        <section class="row carrito my-5">
+        <section id="carrito" class="row carrito my-5">
             <h2 class="mb-3 col-10">Carrito de compras: </h2>
             <button class="btn-primary col-2 reset">Eliminar Carrito</button>
             <table class="table col-12 my-5">

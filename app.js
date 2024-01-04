@@ -2,6 +2,7 @@
 let tienda              = [];
 let carrito             = (!localStorage.getItem('carrito')) ? localStorage.setItem('carrito', JSON.stringify([])): localStorage.getItem('carrito');
 let totalCarrito        = 0;
+let claseClima;
 
 
 const contenedorTienda  = document.querySelector('.tienda');
@@ -9,6 +10,7 @@ const bodyCarrito       = document.querySelector('.carrito tbody');
 const total             = document.querySelector('.total');
 const btnReset          = document.querySelector('.reset');
 const btnComprar        = document.querySelector('#btnComprar');
+const countCarrito      = document.querySelector('.badge');
 
 
 async function obtenerTienda(){
@@ -31,6 +33,7 @@ async function obtenerTienda(){
             total
         });
     }
+    contadorCarrito();
 }
 
 obtenerTienda();
@@ -68,9 +71,11 @@ function obtenerAtributo(idProducto){
         text: "Agregado al carrito",
         duration: 3000,
         close: true,
-        gravity: "top", 
+        gravity: "bottom", 
         position: "right", 
     }).showToast();
+
+    contadorCarrito();
 }
 
 function construirCarrito(){
@@ -105,6 +110,7 @@ function resetCarrito(){
     localStorage.removeItem("carrito");
     carrito = [];
     btnComprar.disabled = 'disabled';
+    contadorCarrito();
 }
 
 btnComprar.addEventListener('click', comprarProductos);
@@ -122,4 +128,56 @@ function comprarProductos(){
             resetCarrito();
         }
     })
+
+    contadorCarrito();
+}
+
+function contadorCarrito(){
+    let cuenta = Object.keys(carrito).length;
+    countCarrito.innerHTML = cuenta;
+}
+
+async function weather(){
+    const appID = 'c8b73b0c82529f1afc73e3a0b747fde6';
+    const city = "Buenos Aires, Argentina";
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appID}`;
+
+    const response = await fetch(URL)
+    .then((response) => response.json())
+    .then((data) => {
+        let icon = document.querySelector('.weather');
+        icon.innerHTML = determinateWeather(data.weather[0].main);
+    });
+}
+
+weather();
+
+function determinateWeather(clima){
+    switch(clima){
+        case 'Rain':
+            claseClima = `<i class="fa-solid fa-cloud-rain fa-2x"></i> `;
+            break;
+        case 'Clouds':
+            claseClima = `<i class="fa-solid fa-cloud fa-2x"></i>`;
+            break;
+        case 'Sun':
+            claseClima = `<i class="fa-solid fa-sun fa-2x"></i>`;
+            break;
+        case 'Clear':
+            claseClima =`<i class="fa-solid fa-cloud-sun fa-2x"></i>`;
+            break;
+        case 'Snow':
+            claseClima =`<i class="fa-solid fa-snowflake fa-2x"></i>`;
+            break;
+        case 'Drizzle':
+            claseClima =`<i class="fa-solid fa-cloud-sun-rain fa-2x"></i>`;
+            break;
+        case 'Thunderstorm':
+            claseClima =`<i class="fa-solid fa-cloud-bolt fa-2x"></i>`;
+            break;
+        default:
+            claseClima = `<i class="fa-solid fa-sun fa-2x"></i>`;
+    }
+
+    return claseClima;
 }
