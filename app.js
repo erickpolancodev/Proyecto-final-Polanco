@@ -1,4 +1,3 @@
-
 let tienda              = [];
 let carrito             = (!localStorage.getItem('carrito')) ? localStorage.setItem('carrito', JSON.stringify([])): localStorage.getItem('carrito');
 let totalCarrito        = 0;
@@ -12,6 +11,7 @@ const btnReset          = document.querySelector('.reset');
 const btnComprar        = document.querySelector('#btnComprar');
 const countCarrito      = document.querySelector('.badge');
 const filtroCategorias  = document.querySelector('#filtro');
+const fecha             = document.querySelector('.fecha');
 
 
 async function obtenerTienda(){
@@ -139,17 +139,16 @@ function contadorCarrito(){
 }
 
 async function weather(){
-    //const appID = 'c8b73b0c82529f1afc73e3a0b747fde6';
-    const appID ='';
+    const appID = 'c8b73b0c82529f1afc73e3a0b747fde6';
     const city = "Buenos Aires, Argentina";
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appID}`;
 
-    // const response = await fetch(URL)
-    // .then((response) => response.json())
-    // .then((data) => {
-    //     let icon = document.querySelector('.weather');
-    //     icon.innerHTML = determinateWeather(data.weather[0].main);
-    // });
+    const response = await fetch(URL)
+    .then((response) => response.json())
+    .then((data) => {
+        let icon = document.querySelector('.weather');
+        icon.innerHTML = determinateWeather(data.weather[0].main);
+    });
 }
 
 weather();
@@ -209,14 +208,12 @@ filtroCategorias.addEventListener('change', filtrar);
 
 function filtrar(){
     items = document.querySelectorAll('.item');
-    // limpiamos todos los posibles hide
+
     items.forEach((item) => {
         item.classList.remove('hide');
     });
 
     const option = filtroCategorias.options[filtroCategorias.selectedIndex];
-
-    console.log(option.value);
 
     itemsArray = Array.from(items);
 
