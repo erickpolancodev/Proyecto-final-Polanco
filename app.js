@@ -16,7 +16,6 @@ const filtroCategorias  = document.querySelector('#filtro');
 
 async function obtenerTienda(){
     const response = await fetch('./productos.json');
-    console.log(response); // devolvera una promesa pending
     if( response.ok ){
         tienda = await response.json(); //esperamos a que la promesa deje de estar pending 
         
@@ -117,7 +116,6 @@ function resetCarrito(){
 btnComprar.addEventListener('click', comprarProductos);
 
 function comprarProductos(){
-    console.log('comprando')
     btnComprar.disabled = 'disabled';
     Swal.fire({
         title: 'Gracias por su compra, vuelva pronto',
@@ -187,7 +185,6 @@ async function cargarFiltro(){
     const response = await fetch('./productos.json');
     let options = `<option value="todos">Todos</option>`;
     let categoriasInicial = [];
-    console.log(response); // devolvera una promesa pending
     if( response.ok ){
         cat = await response.json();
         cat.forEach((nombre) => {
