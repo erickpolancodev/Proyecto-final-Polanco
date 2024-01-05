@@ -1,3 +1,4 @@
+
 let tienda              = [];
 let carrito             = (!localStorage.getItem('carrito')) ? localStorage.setItem('carrito', JSON.stringify([])): localStorage.getItem('carrito');
 let totalCarrito        = 0;
@@ -11,7 +12,6 @@ const btnReset          = document.querySelector('.reset');
 const btnComprar        = document.querySelector('#btnComprar');
 const countCarrito      = document.querySelector('.badge');
 const filtroCategorias  = document.querySelector('#filtro');
-const fecha             = document.querySelector('.fecha');
 
 
 async function obtenerTienda(){
