@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Erick Polanco",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^3.4.4"
+  }
 }

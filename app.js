@@ -1,4 +1,3 @@
-
 let tienda              = [];
 let carrito             = (!localStorage.getItem('carrito')) ? localStorage.setItem('carrito', JSON.stringify([])): localStorage.getItem('carrito');
 let totalCarrito        = 0;
