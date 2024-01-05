@@ -8,8 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Toastify 1.12.0 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+    <!-- FontAwesome 6.5.1 -->
     <link rel="stylesheet" href="./libs/fontawesome/css/all.min.css">
-
+    <!-- Main Css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +29,7 @@
                             <p class="weather"></p>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="mx-3 fa-solid fa-2x fa-cart-shopping"><span class="badge rounded-pill bg-primary">0</span></i></a>
+                            <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#carritoDeCompras"> <i class="mx-3 fa-solid fa-2x fa-cart-shopping"><span class="badge rounded-pill bg-primary">0</span></i></a>
                         </li>
                     </ul>
                 </div>
@@ -37,15 +38,22 @@
     </header>
     
     <section class="container my-5">
-        <h1 class="mb-2">Bienvenidos a TechStore C.A</h1>
-        <section class="row tienda">
+        <div class="row">
+            <h1 class="mb-2 col-9">Bienvenidos a TechStore C.A</h1>
+            <section class="filtro col-3">
+                <select class="form-select" id="filtro">
+                    <option selected>Todos</option>
+                </select>
+            </section>
+        </div>
+        <div class="row tienda">
             
-        </section>
+        </div>
 
         
 
 
-        <div class="modal fade modal-lg modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade modal-lg modal-dialog-scrollable" id="carritoDeCompras" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -95,7 +103,7 @@
     <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
     <!-- SweatAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- JS Propios -->
+    <!-- JS  -->
     <script src="./app.js"></script>
 </body>
 </html>

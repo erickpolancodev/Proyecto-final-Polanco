@@ -4,48 +4,55 @@
         "nombre": "Amazon Echo Dot",
         "marca":"Amazon",
         "precio": 65,
-        "imagen":"./img/amazon-echo-dot-5.png"
+        "imagen":"./img/amazon-echo-dot-5.png",
+        "categoria" : "Audio"
     },
     {
         "id" : 2,
         "nombre": "Amazon Firestick 4K MAX",
         "marca":"Amazon",
         "precio": 45,
-        "imagen":"./img/amazon-firestick-max.png"
+        "imagen":"./img/amazon-firestick-max.png",
+        "categoria" : "Video"
     },
     {
         "id" : 3,
         "nombre": "Laptop Asus Gaming",
         "marca":"Asus",
         "precio": 1045,
-        "imagen":"./img/asus-gaming-laptop.png"
+        "imagen":"./img/asus-gaming-laptop.png",
+        "categoria" : "Laptops"
     },
     {
         "id" : 4,
         "nombre": "Barra de Sonido HP",
         "marca":"HP",
         "precio": 120,
-        "imagen":"./img/barra-de-sonido-hp.png"
+        "imagen":"./img/barra-de-sonido-hp.png",
+        "categoria" : "Audio"
     },
     {
         "id" : 5,
         "nombre": "Iphone 14 Pro Max",
         "marca":"Apple",
         "precio": 1100,
-        "imagen":"./img/iphone-14-pro-max.png"
+        "imagen":"./img/iphone-14-pro-max.png",
+        "categoria" : "Telefonia"
     },
     {
         "id" : 6,
         "nombre": "Lenovo Yoga 3",
         "marca":"Lenovo",
         "precio": 1400,
-        "imagen":"./img/lenovo-yoga-3.png"
+        "imagen":"./img/lenovo-yoga-3.png",
+        "categoria" : "Laptops"
     },
     {
         "id" : 7,
         "nombre": "Samsung S23 Ultra",
         "marca":"Samsung",
         "precio": 1050,
-        "imagen":"./img/samsung-s23-ultra.png"
+        "imagen":"./img/samsung-s23-ultra.png",
+        "categoria" : "Telefonia"
     }
 ]

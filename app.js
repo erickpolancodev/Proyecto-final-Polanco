@@ -11,6 +11,7 @@ const total             = document.querySelector('.total');
 const btnReset          = document.querySelector('.reset');
 const btnComprar        = document.querySelector('#btnComprar');
 const countCarrito      = document.querySelector('.badge');
+const filtroCategorias  = document.querySelector('#filtro');
 
 
 async function obtenerTienda(){
@@ -22,7 +23,7 @@ async function obtenerTienda(){
         tienda.forEach((producto, index) => { 
             contenedorTienda.innerHTML +=  
             `
-                <div class="item col-12 col-sm-6 col-md-4 col-lg-3 my-4">
+                <div class="item col-12 col-sm-6 col-md-4 col-lg-3 my-4" data-categoria="${producto.categoria.toLowerCase()}"">
                     <img src="${producto.imagen}" alt="${producto.nombre}" class="img-fluid">
                     <h3 class="fw-bolder"> ${producto.nombre} </h3>
                     <h4 class="fw-light"> ${producto.marca} </h4>
@@ -34,6 +35,7 @@ async function obtenerTienda(){
         });
     }
     contadorCarrito();
+    cargarFiltro();
 }
 
 obtenerTienda();
@@ -94,8 +96,7 @@ function construirCarrito(){
         </tr>
         `;
         sumar(precioProducto);        
-    });
-    
+    });    
 }
 
 function sumar(precio){
@@ -143,12 +144,12 @@ async function weather(){
     const city = "Buenos Aires, Argentina";
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appID}`;
 
-    const response = await fetch(URL)
-    .then((response) => response.json())
-    .then((data) => {
-        let icon = document.querySelector('.weather');
-        icon.innerHTML = determinateWeather(data.weather[0].main);
-    });
+    // const response = await fetch(URL)
+    // .then((response) => response.json())
+    // .then((data) => {
+    //     let icon = document.querySelector('.weather');
+    //     icon.innerHTML = determinateWeather(data.weather[0].main);
+    // });
 }
 
 weather();
@@ -182,3 +183,56 @@ function determinateWeather(clima){
 
     return claseClima;
 }
+
+async function cargarFiltro(){
+    const response = await fetch('./productos.json');
+    let options = `<option value="todos">Todos</option>`;
+    let categoriasInicial = [];
+    console.log(response); // devolvera una promesa pending
+    if( response.ok ){
+        cat = await response.json();
+        cat.forEach((nombre) => {
+            categoriasInicial.push(nombre.categoria);
+        });
+
+        let categorias = new Set(categoriasInicial);
+
+        categorias.forEach((index) =>{
+            options += `<option value="${index.toLowerCase()}">${index}</option>`
+        })
+        filtroCategorias.innerHTML = options;
+
+    }
+}
+
+filtroCategorias.addEventListener('change', filtrar);
+
+function filtrar(){
+    items = document.querySelectorAll('.item');
+    // limpiamos todos los posibles hide
+    items.forEach((item) => {
+        item.classList.remove('hide');
+    });
+
+    const option = filtroCategorias.options[filtroCategorias.selectedIndex];
+
+    console.log(option.value);
+
+    itemsArray = Array.from(items);
+
+    const itemsCat = itemsArray.filter((item) => {
+        return item.getAttribute("data-categoria") !== option.value;
+    });
+    
+    if(option.value !== 'todos'){
+        itemsCat.forEach((item) => {
+            item.classList.add('hide');
+        });
+    }else{
+        items.forEach((item) => {
+            item.classList.remove('hide');
+        });
+    }
+
+}
+
