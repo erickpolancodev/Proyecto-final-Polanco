@@ -1,0 +1,14 @@
+{
+  "name": "proyecto-final-erick-polanco",
+  "version": "1.0.0",
+  "description": "Proyecto final para la cursada de javascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erick Polanco",
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^3.4.4"
+  }
+}
